@@ -23,6 +23,7 @@ const flashcardSchema = new mongoose.Schema({
 	repetitions: { type: Number, required: true, default: 0 },
 	easeFactor: { type: Number, required: true, default: 2.5 },
 	nextReview: { type: Date, required: true, default: Date.now },
+	category: { type: String, required: true },
 });
 
 export const Flashcard = mongoose.model("Flashcard", flashcardSchema);
@@ -34,4 +35,5 @@ export interface IFlashcard {
 	repetitions: number;
 	easeFactor: number;
 	nextReview: Date;
+	category: string;
 }
