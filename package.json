@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.2.1",
+    "hono": "^4.3.11",
+    "mongoose": "^8.4.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@types/bun": "latest",
+    "@types/mongoose": "^5.11.97"
+  }
+}
