@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build src/index.ts --outdir ./build",
+    "start": "bun run index.js"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.2.1",
