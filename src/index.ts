@@ -57,11 +57,12 @@ const createFlashcardRoute = app.post(
 		z.object({
 			question: z.string(),
 			answer: z.string(),
+			category: z.string(),
 		}),
 	),
 	async (c) => {
-		const { question, answer } = c.req.valid("json");
-		const newFlashcard = new Flashcard({ question, answer });
+		const { question, answer, category } = c.req.valid("json");
+		const newFlashcard = new Flashcard({ question, answer, category });
 		await newFlashcard.save();
 		return c.json(newFlashcard);
 	},
@@ -76,6 +77,7 @@ const bulkCreateFlashcardsRoute = app.post(
 				z.object({
 					question: z.string(),
 					answer: z.string(),
+					category: z.string(),
 				}),
 			),
 		}),
