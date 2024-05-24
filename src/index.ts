@@ -3,8 +3,11 @@ import { Flashcard, connectDB } from "./db";
 import { SuperMemo } from "./supermemo";
 import { zValidator } from "@hono/zod-validator";
 import { z } from "zod";
+import { cors } from 'hono/cors'
 
 const app = new Hono();
+
+app.use("*", cors());
 
 connectDB();
 
