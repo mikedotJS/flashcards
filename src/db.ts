@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const uri =
-	"mongodb+srv://astrus:ABrGZim3Na6tRPRE@cluster0.5kwpfbc.mongodb.net/flashcards?retryWrites=true&w=majority&appName=Cluster0";
+	process.env.MONGODB_URI ?? "";
 const clientOptions = {
 	serverApi: { version: "1" as const, strict: true, deprecationErrors: true },
 };
