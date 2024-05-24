@@ -1,10 +1,12 @@
 import { Hono } from "hono";
-import { Flashcard } from "./db";
+import { Flashcard, connectDB } from "./db";
 import { SuperMemo } from "./supermemo";
 import { zValidator } from "@hono/zod-validator";
 import { z } from "zod";
 
 const app = new Hono();
+
+connectDB();
 
 const dueFlashcardsRoute = app.get("/flashcards/due", async (c) => {
 	const now = new Date();
